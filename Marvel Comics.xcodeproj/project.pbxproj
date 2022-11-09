@@ -16,6 +16,10 @@
 		726987EB291C321B00E2FD02 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726987EA291C321B00E2FD02 /* Comic.swift */; };
 		726987EF291C3BDD00E2FD02 /* ComicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726987EE291C3BDD00E2FD02 /* ComicTests.swift */; };
 		726987F1291C3C0A00E2FD02 /* comics_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 726987F0291C3C0A00E2FD02 /* comics_sample.json */; };
+		726987F3291C46EA00E2FD02 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726987F2291C46EA00E2FD02 /* Endpoint.swift */; };
+		726987F6291C493E00E2FD02 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726987F5291C493E00E2FD02 /* NetworkService.swift */; };
+		726987F8291C4ABC00E2FD02 /* Endpoint+Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726987F7291C4ABC00E2FD02 /* Endpoint+Comic.swift */; };
+		726987FC291C4CB500E2FD02 /* Endpoint_ComicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726987FB291C4CB500E2FD02 /* Endpoint_ComicTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,10 @@
 		726987EA291C321B00E2FD02 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		726987EE291C3BDD00E2FD02 /* ComicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTests.swift; sourceTree = "<group>"; };
 		726987F0291C3C0A00E2FD02 /* comics_sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = comics_sample.json; sourceTree = "<group>"; };
+		726987F2291C46EA00E2FD02 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		726987F5291C493E00E2FD02 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		726987F7291C4ABC00E2FD02 /* Endpoint+Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Comic.swift"; sourceTree = "<group>"; };
+		726987FB291C4CB500E2FD02 /* Endpoint_ComicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint_ComicTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			children = (
 				726987EE291C3BDD00E2FD02 /* ComicTests.swift */,
 				726987F0291C3C0A00E2FD02 /* comics_sample.json */,
+				726987FB291C4CB500E2FD02 /* Endpoint_ComicTests.swift */,
 			);
 			path = "Marvel ComicsTests";
 			sourceTree = "<group>";
@@ -116,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				726987E9291C30E100E2FD02 /* comics */,
+				726987F4291C479900E2FD02 /* networking */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -125,8 +135,18 @@
 			children = (
 				726987E6291C30D000E2FD02 /* ComicsStore.swift */,
 				726987EA291C321B00E2FD02 /* Comic.swift */,
+				726987F7291C4ABC00E2FD02 /* Endpoint+Comic.swift */,
 			);
 			path = comics;
+			sourceTree = "<group>";
+		};
+		726987F4291C479900E2FD02 /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				726987F2291C46EA00E2FD02 /* Endpoint.swift */,
+				726987F5291C493E00E2FD02 /* NetworkService.swift */,
+			);
+			path = networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +277,10 @@
 				726987DF291C060200E2FD02 /* Secrets.swift in Sources */,
 				726987EB291C321B00E2FD02 /* Comic.swift in Sources */,
 				72383E7A291BD4890031A630 /* Marvel_ComicsApp.swift in Sources */,
+				726987F3291C46EA00E2FD02 /* Endpoint.swift in Sources */,
 				726987E7291C30D000E2FD02 /* ComicsStore.swift in Sources */,
+				726987F8291C4ABC00E2FD02 /* Endpoint+Comic.swift in Sources */,
+				726987F6291C493E00E2FD02 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726987FC291C4CB500E2FD02 /* Endpoint_ComicTests.swift in Sources */,
 				726987EF291C3BDD00E2FD02 /* ComicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
