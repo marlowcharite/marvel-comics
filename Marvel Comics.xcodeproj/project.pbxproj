@@ -203,7 +203,8 @@
 /* Begin PBXShellScriptBuildPhase section */
 		726987E5291C15E300E2FD02 /* Check Secrets Config */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -217,7 +218,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SECRETS_CONFIG_FILE_NAME='marvelcomics_secrets.xcconfig'\n\nCONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/$SECRETS_CONFIG_FILE_NAME\n\nif [ -f '$CONFIG_FILE_PATH' ]; then\n    echo '$CONFIG_FILE_PATH exists.'\nelse\n    echo '$CONFIG_FILE_PATH does not exist. Creating now…\\n'\n    echo 'API_KEY = ' >> $SECRETS_CONFIG_FILE_NAME\n    echo 'Please add your API key to $CONFIG_FILE_PATH.'\nfi\n";
+			shellScript = "SECRETS_CONFIG_FILE_NAME='marvelcomics_secrets.xcconfig'\n\nif [ -f \"$SECRETS_CONFIG_FILE_NAME\" ]; then\n    echo \"$SECRETS_CONFIG_FILE_NAME exists.\"\nelse\n    echo \"$SECRETS_CONFIG_FILE_NAME does not exist. Creating now…\"\n    echo 'API_KEY = ' >> $SECRETS_CONFIG_FILE_NAME\n    echo \"Please add your API key to $SECRETS_CONFIG_FILE_NAME.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
