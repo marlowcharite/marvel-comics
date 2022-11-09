@@ -35,7 +35,6 @@
 		72383E87291BD48A0031A630 /* Marvel ComicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marvel ComicsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72383E8B291BD48A0031A630 /* Marvel_ComicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_ComicsTests.swift; sourceTree = "<group>"; };
 		726987DE291C060200E2FD02 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		726987E0291C0CEB00E2FD02 /* marvelcomics_secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = marvelcomics_secrets.xcconfig; sourceTree = "<group>"; };
 		726987E1291C0D6100E2FD02 /* Marvel-Comics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Marvel-Comics-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -85,7 +84,6 @@
 				72383E7F291BD48A0031A630 /* Marvel_Comics.entitlements */,
 				72383E80291BD48A0031A630 /* Preview Content */,
 				726987DE291C060200E2FD02 /* Secrets.swift */,
-				726987E0291C0CEB00E2FD02 /* marvelcomics_secrets.xcconfig */,
 			);
 			path = "Marvel Comics";
 			sourceTree = "<group>";
@@ -113,6 +111,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72383E9B291BD48A0031A630 /* Build configuration list for PBXNativeTarget "Marvel Comics" */;
 			buildPhases = (
+				726987E5291C15E300E2FD02 /* Check Secrets Config */,
 				72383E72291BD4890031A630 /* Sources */,
 				72383E73291BD4890031A630 /* Frameworks */,
 				72383E74291BD4890031A630 /* Resources */,
@@ -200,6 +199,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		726987E5291C15E300E2FD02 /* Check Secrets Config */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check Secrets Config";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SECRETS_CONFIG_FILE_NAME='marvelcomics_secrets.xcconfig'\n\nCONFIG_FILE_PATH=$SRCROOT/$PRODUCT_NAME/$SECRETS_CONFIG_FILE_NAME\n\nif [ -f '$CONFIG_FILE_PATH' ]; then\n    echo '$CONFIG_FILE_PATH exists.'\nelse\n    echo '$CONFIG_FILE_PATH does not exist. Creating now…\\n'\n    echo 'API_KEY = ' >> $SECRETS_CONFIG_FILE_NAME\n    echo 'Please add your API key to $CONFIG_FILE_PATH.'\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72383E72291BD4890031A630 /* Sources */ = {
@@ -342,7 +362,6 @@
 		};
 		72383E9C291BD48A0031A630 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 726987E0291C0CEB00E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -380,7 +399,6 @@
 		};
 		72383E9D291BD48A0031A630 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 726987E0291C0CEB00E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
