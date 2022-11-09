@@ -11,6 +11,9 @@ final class LibraryViewModel: ObservableObject {
     
     // MARK: - Outputs
     
+    @Published private(set) var comics: [ComicEntity] = []
+    @Published var errorMessage: String?
+    
     // MARK: - Properties
     
     private let repository: ComicsRepository
@@ -22,4 +25,13 @@ final class LibraryViewModel: ObservableObject {
     }
     
     // MARK: - Inputs
+    
+    @MainActor
+    func loadComics() async {
+        do {
+            comics = try await repository.retrieveAllComics()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
 }

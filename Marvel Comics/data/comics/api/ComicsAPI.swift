@@ -9,6 +9,10 @@ import Foundation
 
 final class ComicsAPI: ComicsStore {
     
+    enum ComicsError: Error {
+        case invalidResponse
+    }
+    
     // MARK: - Properties
     
     private let service: NetworkService
@@ -20,11 +24,17 @@ final class ComicsAPI: ComicsStore {
     }
     
     func readComics() async throws -> [Comic] {
-        try await service.read(.comics())
+        let response = try await service.read(.comics())
+        return response.data?.results ?? []
     }
     
     func readComic(for id: Int) async throws -> Comic {
-        try await service.read(.comic(for: id))
-
+        let response = try await service.read(.comic(for: id))
+        
+        guard let comic = response.data?.results?.first else {
+            throw ComicsError.invalidResponse
+        }
+        
+        return comic
     }
 }

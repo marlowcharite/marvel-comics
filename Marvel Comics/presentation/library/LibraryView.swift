@@ -12,8 +12,19 @@ struct LibraryView: View {
     @ObservedObject var viewModel: LibraryViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationTitle("Marvel Comics")
+        VStack {
+            
+            if let message = viewModel.errorMessage {
+                Text("Error: \(message)")
+            }
+            
+            Text("Total number of comics: \(viewModel.comics.count)")
+            Text("Hello, World!")
+                .navigationTitle("Marvel Comics")
+                .task {
+                    await viewModel.loadComics()
+                }
+        }
     }
 }
 

@@ -30,6 +30,8 @@ extension Endpoint {
         urlRequest.httpMethod = method.rawValue
         urlRequest.httpBody = requestBody
         
+        print("Request URL: \(urlRequest.url?.absoluteString)")
+        
         return urlRequest
     }
 }

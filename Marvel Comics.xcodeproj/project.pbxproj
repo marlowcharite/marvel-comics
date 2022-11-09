@@ -42,6 +42,7 @@
 		7269882D291C618D00E2FD02 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269882C291C618D00E2FD02 /* LibraryView.swift */; };
 		72698830291C620200E2FD02 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269882F291C620200E2FD02 /* AppCoordinator.swift */; };
 		72698832291C629E00E2FD02 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698831291C629E00E2FD02 /* LibraryViewModel.swift */; };
+		72698835291C69EE00E2FD02 /* ComicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698834291C69EE00E2FD02 /* ComicResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		7269882C291C618D00E2FD02 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		7269882F291C620200E2FD02 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		72698831291C629E00E2FD02 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		72698834291C69EE00E2FD02 /* ComicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicResponse.swift; sourceTree = "<group>"; };
+		72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = marvelcomics_secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +182,7 @@
 			children = (
 				72698802291C515B00E2FD02 /* api */,
 				72698803291C516400E2FD02 /* model */,
-				72698826291C56FB00E2FD02 /* RemoteComicsRepository.swift */,
+				72698836291C6C5500E2FD02 /* repositories */,
 			);
 			path = comics;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				7269881A291C527600E2FD02 /* StoryList.swift */,
 				7269881C291C528500E2FD02 /* StorySummary.swift */,
 				72698804291C519F00E2FD02 /* TextObject.swift */,
+				72698834291C69EE00E2FD02 /* ComicResponse.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -264,6 +268,7 @@
 		7269882B291C5AE600E2FD02 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */,
 				72698828291C5AA900E2FD02 /* NetworkClient.swift */,
 				726987DE291C060200E2FD02 /* Secrets.swift */,
 			);
@@ -273,10 +278,26 @@
 		7269882E291C61AD00E2FD02 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				72698833291C67C700E2FD02 /* library */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		72698833291C67C700E2FD02 /* library */ = {
+			isa = PBXGroup;
+			children = (
 				7269882C291C618D00E2FD02 /* LibraryView.swift */,
 				72698831291C629E00E2FD02 /* LibraryViewModel.swift */,
 			);
-			path = presentation;
+			path = library;
+			sourceTree = "<group>";
+		};
+		72698836291C6C5500E2FD02 /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				72698826291C56FB00E2FD02 /* RemoteComicsRepository.swift */,
+			);
+			path = repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +440,7 @@
 				726987F3291C46EA00E2FD02 /* Endpoint.swift in Sources */,
 				7269881B291C527600E2FD02 /* StoryList.swift in Sources */,
 				72698809291C51CC00E2FD02 /* SeriesSummary.swift in Sources */,
+				72698835291C69EE00E2FD02 /* ComicResponse.swift in Sources */,
 				7269882D291C618D00E2FD02 /* LibraryView.swift in Sources */,
 				72698811291C521A00E2FD02 /* ComicImage.swift in Sources */,
 				726987E7291C30D000E2FD02 /* ComicsStore.swift in Sources */,
@@ -567,6 +589,7 @@
 		};
 		72383E9C291BD48A0031A630 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -604,6 +627,7 @@
 		};
 		72383E9D291BD48A0031A630 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

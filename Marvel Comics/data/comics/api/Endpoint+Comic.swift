@@ -7,16 +7,13 @@
 
 import Foundation
 
-extension Endpoint where Response == [Comic] {
+extension Endpoint where Response == ComicResponse {
     
     static func comics() -> Self {
-        Endpoint(path: "/comics")
+        Endpoint(path: "/v1/public/comics")
     }
-}
-
-extension Endpoint where Response == Comic {
     
     static func comic(for id: Int) -> Self {
-        Endpoint(path: "/comics/\(id)")
+        Endpoint(path: "/v1/public/comics/\(id)")
     }
 }
