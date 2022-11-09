@@ -9,11 +9,12 @@ import Foundation
 
 protocol NetworkService {
     
+    /// The decoder used for data conversion.
+    var decoder: JSONDecoder { get }
+    
     /// Performs a request to a given ``Endpoint``.
     /// 
-    /// - Parameters:
-    ///   - endpoint: The resource to send request to.
-    ///   - decoder: The decoder used for data conversion.
+    /// - Parameters endpoint: The resource to send request to.
     /// - Returns: A decoded response iff request is successful.
-    func read<T: Decodable>(_ endpoint: Endpoint<T>, decoder: JSONDecoder) async throws -> T
+    func read<T: Decodable>(_ endpoint: Endpoint<T>) async throws -> T
 }

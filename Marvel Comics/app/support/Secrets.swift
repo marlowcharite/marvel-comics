@@ -11,6 +11,8 @@ final class Secrets {
     
     // MARK: - Properties
     
+    var baseURL: URL? { URL(string: "https://gateway.marvel.com/") }
+    
     var apiKey: String? {
         guard let token = bundle.infoDictionary?[Key.publicKey.rawValue] as? String else { return nil }
         return token
