@@ -13,7 +13,8 @@ final class LibraryViewModel: ObservableObject {
     
     @Published private(set) var comics: [ComicEntity] = []
     @Published var errorMessage: String?
-    
+    @Published private(set) var isLoading = false
+
     // MARK: - Properties
     
     private let repository: ComicsRepository
@@ -28,6 +29,9 @@ final class LibraryViewModel: ObservableObject {
     
     @MainActor
     func loadComics() async {
+        defer { isLoading = false }
+        isLoading = true
+        
         do {
             comics = try await repository.retrieveAllComics()
         } catch {

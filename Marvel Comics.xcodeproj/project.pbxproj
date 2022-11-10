@@ -43,6 +43,7 @@
 		72698830291C620200E2FD02 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269882F291C620200E2FD02 /* AppCoordinator.swift */; };
 		72698832291C629E00E2FD02 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698831291C629E00E2FD02 /* LibraryViewModel.swift */; };
 		72698835291C69EE00E2FD02 /* ComicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698834291C69EE00E2FD02 /* ComicResponse.swift */; };
+		7269883D291C9B4500E2FD02 /* LibraryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269883C291C9B4500E2FD02 /* LibraryViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		72698831291C629E00E2FD02 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		72698834291C69EE00E2FD02 /* ComicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicResponse.swift; sourceTree = "<group>"; };
 		7269883B291C94ED00E2FD02 /* marvelcomics_secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = marvelcomics_secrets.xcconfig; sourceTree = SOURCE_ROOT; };
+		7269883C291C9B4500E2FD02 /* LibraryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				726987EE291C3BDD00E2FD02 /* ComicTests.swift */,
 				726987FB291C4CB500E2FD02 /* Endpoint_ComicTests.swift */,
 				726987F0291C3C0A00E2FD02 /* comics_sample.json */,
+				7269883C291C9B4500E2FD02 /* LibraryViewModelTests.swift */,
 			);
 			path = "Marvel ComicsTests";
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			files = (
 				726987FC291C4CB500E2FD02 /* Endpoint_ComicTests.swift in Sources */,
 				726987EF291C3BDD00E2FD02 /* ComicTests.swift in Sources */,
+				7269883D291C9B4500E2FD02 /* LibraryViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,20 +10,24 @@ import SwiftUI
 struct LibraryView: View {
     
     @ObservedObject var viewModel: LibraryViewModel
-    
+        
     var body: some View {
         VStack {
-            
             if let message = viewModel.errorMessage {
                 Text("Error: \(message)")
             }
             
-            Text("Total number of comics: \(viewModel.comics.count)")
-            Text("Hello, World!")
-                .navigationTitle("Marvel Comics")
-                .task {
-                    await viewModel.loadComics()
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                ForEach(viewModel.comics, id: \.id) { comic in
+                    Text(comic.title)
                 }
+            }
+        }
+        .navigationTitle("Marvel Comics")
+        .task {
+            await viewModel.loadComics()
         }
     }
 }
