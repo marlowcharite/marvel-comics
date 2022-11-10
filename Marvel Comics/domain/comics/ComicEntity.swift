@@ -11,6 +11,7 @@ struct ComicEntity {
     let id: Int
     let title: String
     let date: Date
-    let thumbnailPath: String
+    let coverImagePath: String
+    let coverImageExtension: String
     let description: String
 }

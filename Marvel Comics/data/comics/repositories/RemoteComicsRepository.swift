@@ -40,13 +40,15 @@ final class RemoteComicsRepository: ComicsRepository {
               let modified = dto.modified,
               let date = ISO8601DateFormatter().date(from: modified),
               let description = dto.description,
-              let thumbnailPath = dto.thumbnail?.path else { return nil }
+              let thumbnailPath = dto.thumbnail?.path,
+              let ext = dto.thumbnail?._extension else { return nil }
         
         return ComicEntity(
             id: id,
             title: title,
             date: date,
-            thumbnailPath: thumbnailPath,
+            coverImagePath: thumbnailPath,
+            coverImageExtension: ext,
             description: description
         )
     }

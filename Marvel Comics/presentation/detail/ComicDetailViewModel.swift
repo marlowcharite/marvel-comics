@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 final class ComicDetailViewModel: ObservableObject, Identifiable {
     
@@ -14,6 +15,12 @@ final class ComicDetailViewModel: ObservableObject, Identifiable {
     var id: Int { comic.id }
     
     var title: String { comic.title }
+    
+    var thumbnailCoverUrl: URL? { URL(string: "\(comic.coverImagePath)/portrait_medium.\(comic.coverImageExtension)") }
+    
+    var coverUrl: URL? { URL(string: "\(comic.coverImagePath)/portrait_fantastic.\(comic.coverImageExtension)") }
+    
+    var modifiedDate: Date { comic.date }
     
     // MARK: - Properties
     

@@ -12,7 +12,7 @@ struct LibraryView: View {
     @ObservedObject var viewModel: LibraryViewModel
         
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             if let message = viewModel.errorMessage {
                 Text("Error: \(message)")
             }
@@ -20,12 +20,16 @@ struct LibraryView: View {
             if viewModel.isLoading {
                 ProgressView()
             } else {
-                ForEach(viewModel.comics, id: \.id) { comic in
-                    Text(comic.title)
-                        .onTapGesture {
-                            viewModel.showDetail(for: comic)
-                        }
+                ScrollView(showsIndicators: false) {
+                    ForEach(viewModel.comics, id: \.id) { comic in
+                        ComicRow(viewModel: ComicDetailViewModel(comic: comic))
+                            .frame(height: 100)
+                            .onTapGesture {
+                                viewModel.showDetail(for: comic)
+                            }
+                    }
                 }
+                .padding(.horizontal)
             }
         }
         .navigationTitle("Marvel Comics")
@@ -41,7 +45,7 @@ struct LibraryView_Previews: PreviewProvider {
         func retrieveAllComics() async throws -> [ComicEntity] { [] }
         
         func retrieveComic(with id: Int) async throws -> ComicEntity {
-            ComicEntity(id: 12, title: "Test", date: Date(), thumbnailPath: "", description: "")
+            ComicEntity(id: 12, title: "Test", date: Date(), coverImagePath: "", coverImageExtension: "", description: "")
         }
     }
     

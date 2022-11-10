@@ -52,16 +52,16 @@ final class LibraryViewModelTests: XCTestCase {
             }
             
             return [
-                ComicEntity(id: 3, title: "Spiderman", date: Date(), thumbnailPath: "", description: "Amazing"),
-                ComicEntity(id: 3, title: "Punisher", date: Date(), thumbnailPath: "", description: "Vengeance"),
-                ComicEntity(id: 3, title: "Black Panther", date: Date(), thumbnailPath: "", description: "Royalty"),
-                ComicEntity(id: 3, title: "Storm", date: Date(), thumbnailPath: "", description: "Powerful"),
-                ComicEntity(id: 3, title: "Ironman", date: Date(), thumbnailPath: "", description: "Rich")
+                ComicEntity(id: 3, title: "Spiderman", date: Date(), coverImagePath: "", coverImageExtension: "", description: "Amazing"),
+                ComicEntity(id: 3, title: "Punisher", date: Date(), coverImagePath: "", coverImageExtension: "", description: "Vengeance"),
+                ComicEntity(id: 3, title: "Black Panther", date: Date(), coverImagePath: "", coverImageExtension: "", description: "Royalty"),
+                ComicEntity(id: 3, title: "Storm", date: Date(), coverImagePath: "", coverImageExtension: "", description: "Powerful"),
+                ComicEntity(id: 3, title: "Ironman", date: Date(), coverImagePath: "", coverImageExtension: "", description: "Rich")
             ]
         }
         
         func retrieveComic(with id: Int) async throws -> ComicEntity {
-            ComicEntity(id: 3, title: "Spiderman", date: Date(), thumbnailPath: "", description: "Amazing")
+            ComicEntity(id: 3, title: "Spiderman", date: Date(), coverImagePath: "", coverImageExtension: "", description: "Amazing")
         }
     }
 }

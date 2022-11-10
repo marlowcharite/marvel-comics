@@ -22,7 +22,8 @@ struct ComicDetailView_Previews: PreviewProvider {
             id: 3,
             title: "The Amazing Spider-Man",
             date: Date(),
-            thumbnailPath: "",
+            coverImagePath: "",
+            coverImageExtension: "",
             description: ""
         )))
     }

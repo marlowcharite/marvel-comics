@@ -46,6 +46,7 @@
 		7269883D291C9B4500E2FD02 /* LibraryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269883C291C9B4500E2FD02 /* LibraryViewModelTests.swift */; };
 		7269883F291CA10800E2FD02 /* ComicDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269883E291CA10800E2FD02 /* ComicDetailViewModel.swift */; };
 		72698842291CA18300E2FD02 /* ComicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698841291CA18300E2FD02 /* ComicDetailView.swift */; };
+		72698844291CABD800E2FD02 /* ComicRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698843291CABD800E2FD02 /* ComicRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		7269883C291C9B4500E2FD02 /* LibraryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModelTests.swift; sourceTree = "<group>"; };
 		7269883E291CA10800E2FD02 /* ComicDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailViewModel.swift; sourceTree = "<group>"; };
 		72698841291CA18300E2FD02 /* ComicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailView.swift; sourceTree = "<group>"; };
+		72698843291CABD800E2FD02 /* ComicRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 			children = (
 				72698831291C629E00E2FD02 /* LibraryViewModel.swift */,
 				7269882C291C618D00E2FD02 /* LibraryView.swift */,
+				72698843291CABD800E2FD02 /* ComicRow.swift */,
 			);
 			path = library;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				72698819291C526A00E2FD02 /* CharacterSummary.swift in Sources */,
 				72698805291C519F00E2FD02 /* TextObject.swift in Sources */,
 				7269880D291C51F000E2FD02 /* ComicDate.swift in Sources */,
+				72698844291CABD800E2FD02 /* ComicRow.swift in Sources */,
 				726987F8291C4ABC00E2FD02 /* Endpoint+Comic.swift in Sources */,
 				726987F6291C493E00E2FD02 /* NetworkService.swift in Sources */,
 				7269880F291C520300E2FD02 /* ComicPrice.swift in Sources */,
