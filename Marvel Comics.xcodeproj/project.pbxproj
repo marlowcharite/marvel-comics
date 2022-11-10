@@ -47,6 +47,7 @@
 		7269883F291CA10800E2FD02 /* ComicDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7269883E291CA10800E2FD02 /* ComicDetailViewModel.swift */; };
 		72698842291CA18300E2FD02 /* ComicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698841291CA18300E2FD02 /* ComicDetailView.swift */; };
 		72698844291CABD800E2FD02 /* ComicRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698843291CABD800E2FD02 /* ComicRow.swift */; };
+		72698846291CB27200E2FD02 /* CoverImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72698845291CB27200E2FD02 /* CoverImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		7269883E291CA10800E2FD02 /* ComicDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailViewModel.swift; sourceTree = "<group>"; };
 		72698841291CA18300E2FD02 /* ComicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailView.swift; sourceTree = "<group>"; };
 		72698843291CABD800E2FD02 /* ComicRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicRow.swift; sourceTree = "<group>"; };
+		72698845291CB27200E2FD02 /* CoverImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 			children = (
 				72698833291C67C700E2FD02 /* library */,
 				72698840291CA10D00E2FD02 /* detail */,
+				72698847291CB2AD00E2FD02 /* views */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -318,6 +321,14 @@
 				72698841291CA18300E2FD02 /* ComicDetailView.swift */,
 			);
 			path = detail;
+			sourceTree = "<group>";
+		};
+		72698847291CB2AD00E2FD02 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				72698845291CB27200E2FD02 /* CoverImage.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +486,7 @@
 				72698815291C524E00E2FD02 /* CreatorSummary.swift in Sources */,
 				72698821291C52A200E2FD02 /* EventSummary.swift in Sources */,
 				72698817291C525D00E2FD02 /* CharacterList.swift in Sources */,
+				72698846291CB27200E2FD02 /* CoverImage.swift in Sources */,
 				72698823291C533500E2FD02 /* ComicEntity.swift in Sources */,
 				7269881F291C529600E2FD02 /* EventList.swift in Sources */,
 				7269883F291CA10800E2FD02 /* ComicDetailViewModel.swift in Sources */,

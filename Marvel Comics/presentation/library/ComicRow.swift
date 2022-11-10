@@ -13,7 +13,7 @@ struct ComicRow: View {
     
     var body: some View {
         HStack {
-            cover
+            CoverImage(coverUrl: viewModel.thumbnailCoverUrl)
                 .frame(width: 100, height: 100)
             VStack(alignment: .leading) {
                 Text(viewModel.title)
@@ -22,16 +22,6 @@ struct ComicRow: View {
                     .font(.caption)
             }
             Spacer()
-        }
-    }
-    
-    private var cover: some View {
-        AsyncImage(url: viewModel.thumbnailCoverUrl) { image in
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        } placeholder: {
-            Image(systemName: "photo.fill")
         }
     }
 }

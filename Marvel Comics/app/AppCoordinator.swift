@@ -8,7 +8,7 @@
 import Combine
 
 /// The main navigation coordinator.
-final class AppCoordinator: ObservableObject, LibraryViewModelObserver {
+final class AppCoordinator: ObservableObject, ComicDetailRouter, LibraryViewModelObserver {
     
     // MARK: - Properties
     
@@ -24,6 +24,12 @@ final class AppCoordinator: ObservableObject, LibraryViewModelObserver {
     // MARK: - <LibraryViewModelObserver>
     
     func didSelectComic(_ comic: ComicEntity) {
-        detailViewModel = ComicDetailViewModel(comic: comic)
+        detailViewModel = ComicDetailViewModel(comic: comic, router: self)
+    }
+    
+    // MARK: - <ComicDetailRouter>
+   
+    func finished() {
+        detailViewModel = nil
     }
 }

@@ -58,6 +58,7 @@ final class LibraryViewModel: ObservableObject {
     /// Handles the event of comic selection.
     ///
     /// - Parameter comic: The comic that was selected.
+    @MainActor
     func showDetail(for comic: ComicEntity) {
         selectionObserver?.didSelectComic(comic)
     }
