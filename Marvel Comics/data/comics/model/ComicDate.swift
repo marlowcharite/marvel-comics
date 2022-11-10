@@ -9,5 +9,5 @@ import Foundation
 
 public struct ComicDate: Decodable {
     let type: String?
-    let date: Date?
+    let date: String?
 }

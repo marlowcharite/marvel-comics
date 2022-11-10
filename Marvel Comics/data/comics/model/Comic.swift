@@ -15,7 +15,7 @@ public struct Comic: Decodable {
     let issueNumber: Double?
     let variantDescription: String?
     let description: String?
-    let modified: Date?
+    let modified: String?
     let isbn: String?
     let upc: String?
     let diamondCode: String?

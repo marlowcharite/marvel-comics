@@ -96,7 +96,7 @@
 		7269882F291C620200E2FD02 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		72698831291C629E00E2FD02 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		72698834291C69EE00E2FD02 /* ComicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicResponse.swift; sourceTree = "<group>"; };
-		72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = marvelcomics_secrets.xcconfig; sourceTree = "<group>"; };
+		7269883B291C94ED00E2FD02 /* marvelcomics_secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = marvelcomics_secrets.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,7 +268,7 @@
 		7269882B291C5AE600E2FD02 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */,
+				7269883B291C94ED00E2FD02 /* marvelcomics_secrets.xcconfig */,
 				72698828291C5AA900E2FD02 /* NetworkClient.swift */,
 				726987DE291C060200E2FD02 /* Secrets.swift */,
 			);
@@ -415,7 +415,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SECRETS_CONFIG_FILE_NAME='marvelcomics_secrets.xcconfig'\n\nif [ -f \"$SECRETS_CONFIG_FILE_NAME\" ]; then\n    echo \"$SECRETS_CONFIG_FILE_NAME exists.\"\nelse\n    echo \"$SECRETS_CONFIG_FILE_NAME does not exist. Creating now…\"\n    echo 'API_KEY = ' >> $SECRETS_CONFIG_FILE_NAME\n    echo \"Please add your API key to $SECRETS_CONFIG_FILE_NAME.\"\nfi\n";
+			shellScript = "SECRETS_CONFIG_FILE_NAME='marvelcomics_secrets.xcconfig'\n\nif [ -f \"$SECRETS_CONFIG_FILE_NAME\" ]; then\n    echo \"$SECRETS_CONFIG_FILE_NAME exists.\"\nelse\n    echo \"$SECRETS_CONFIG_FILE_NAME does not exist. Creating now…\"\n    echo 'BASE_URL = gateway.marvel.com:443/\\nAPI_KEY = \\nPRIVATE_API_KEY = ' >> $SECRETS_CONFIG_FILE_NAME\n    echo \"Please add your API key to $SECRETS_CONFIG_FILE_NAME.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -480,6 +480,7 @@
 /* Begin XCBuildConfiguration section */
 		72383E99291BD48A0031A630 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7269883B291C94ED00E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -538,6 +539,7 @@
 		};
 		72383E9A291BD48A0031A630 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7269883B291C94ED00E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -589,7 +591,6 @@
 		};
 		72383E9C291BD48A0031A630 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -627,7 +628,6 @@
 		};
 		72383E9D291BD48A0031A630 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72698837291C70D800E2FD02 /* marvelcomics_secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

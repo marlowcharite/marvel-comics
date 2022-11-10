@@ -37,7 +37,8 @@ final class RemoteComicsRepository: ComicsRepository {
     private static func convertDto(_ dto: Comic) -> ComicEntity? {
         guard let id = dto.id,
               let title = dto.title,
-              let date = dto.modified,
+              let modified = dto.modified,
+              let date = ISO8601DateFormatter().date(from: modified),
               let description = dto.description,
               let thumbnailPath = dto.thumbnail?.path else { return nil }
         

@@ -31,11 +31,11 @@ final class NetworkClient: NetworkService {
     }
     
     func read<T: Decodable>(_ endpoint: Endpoint<T>) async throws -> T {
-        guard let apiKey = secrets.apiKey else {
+        guard let baseUrl = secrets.baseURL, let privateKey = secrets.privateKey, let apiKey = secrets.apiKey else {
             throw NetworkError.missingApiKey
         }
         
-        guard let baseUrl = secrets.baseURL, let request = endpoint.request(with: apiKey, baseUrl: baseUrl) else {
+        guard let request = endpoint.request(with: apiKey, privateKey: privateKey, baseUrl: baseUrl) else {
             throw NetworkError.missingBaseURL
         }
         
