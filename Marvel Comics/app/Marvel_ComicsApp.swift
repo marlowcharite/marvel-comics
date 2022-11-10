@@ -23,6 +23,9 @@ struct Marvel_ComicsApp: App {
             NavigationStack {
                 LibraryView(viewModel: appCoordinator.libraryViewModel)
             }
+            .sheet(item: $appCoordinator.detailViewModel) { viewModel in
+                ComicDetailView(viewModel: viewModel)
+            }
         }
     }
 }

@@ -7,6 +7,14 @@
 
 import Combine
 
+protocol LibraryViewModelObserver: AnyObject {
+    
+    /// Notifies subscribers of a comic selection event.
+    ///
+    /// - Parameter comic: The comic that was selected.
+    func didSelectComic(_ comic: ComicEntity)
+}
+
 final class LibraryViewModel: ObservableObject {
     
     // MARK: - Outputs
@@ -18,15 +26,23 @@ final class LibraryViewModel: ObservableObject {
     // MARK: - Properties
     
     private let repository: ComicsRepository
+    private weak var selectionObserver: LibraryViewModelObserver?
     
     // MARK: - Initializers
     
-    init(repository: ComicsRepository) {
+    /// Creates a new ``LibraryViewModel``.
+    ///
+    /// - Parameters:
+    ///   - repository: The comic datastore.
+    ///   - observer: An observer to notify about comic selection.
+    init(repository: ComicsRepository, observer: LibraryViewModelObserver? = nil) {
         self.repository = repository
+        selectionObserver = observer
     }
     
     // MARK: - Inputs
     
+    /// Fetches a list of comics.
     @MainActor
     func loadComics() async {
         defer { isLoading = false }
@@ -37,5 +53,12 @@ final class LibraryViewModel: ObservableObject {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+    
+    /// Handles the event of comic selection.
+    ///
+    /// - Parameter comic: The comic that was selected.
+    func showDetail(for comic: ComicEntity) {
+        selectionObserver?.didSelectComic(comic)
     }
 }

@@ -22,6 +22,9 @@ struct LibraryView: View {
             } else {
                 ForEach(viewModel.comics, id: \.id) { comic in
                     Text(comic.title)
+                        .onTapGesture {
+                            viewModel.showDetail(for: comic)
+                        }
                 }
             }
         }
